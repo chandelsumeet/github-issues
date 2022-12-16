@@ -1,3 +1,23 @@
+# Github Clone
+
+This is clone of github page.
+![](./src/_assets/images/github-window.jpg)
+![](./src/_assets/images/github-mobile.jpg)
+
+## Tech Stack Used
+
+- React
+- Typescript
+- Material Ui Components
+- Material Ui Icons
+- Sass
+
+## Features
+
+- Dynamic data fetched from [https://api.github.com/repos/facebook/react/issues](https://api.github.com/repos/facebook/react/issues)
+- Infinte Scrolling
+- Responsive Design
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
