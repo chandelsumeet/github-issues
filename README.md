@@ -1,8 +1,8 @@
 # Github Clone
 
 This is clone of github page.
-![](./src/_assets/images/github-window.jpg)
-![](./src/_assets/images/github-mobile.jpg)
+![github-window](https://user-images.githubusercontent.com/60235855/208114546-ac467412-05bf-48d1-83bc-5071f4f207eb.jpg)
+![github-mobile](https://user-images.githubusercontent.com/60235855/208114563-9af204ff-bf0e-4e7b-9752-bfd44fecbff1.jpg)
 
 ## Tech Stack Used
 
