@@ -6,44 +6,53 @@ import {
   Box,
   Grid,
   Typography,
+  Avatar,
 } from "@mui/material";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import { calculateCreatedTime } from "../../util/calculateCreateTime";
 import ChipComponent from "../chip/ChipComponent";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-const TableRowComponent = ({ data }: any) => {
+import { IGithubData } from "../../types/Github";
+
+const TableRowComponent = ({ data }: { data: IGithubData }) => {
   const { title, comments, url, number, created_at, labels } = data;
-  const { login } = data?.user;
+  const { login, avatar_url } = data?.user;
   return (
-    <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+    <TableRow hover>
       <TableCell component="th" scope="row">
-        <Box>
-          <Grid container justifyContent="space-between">
-            <Grid item>
-              <AdjustIcon />
-            </Grid>
-            <Grid item ml={1}>
-              <Stack direction="row" spacing={2}>
+        <Stack direction="row" justifyContent="space-between">
+          <Stack direction="row" spacing={1}>
+            <Box>
+              <AdjustIcon className="open-action" />
+            </Box>
+            <Stack direction="column">
+              <Stack direction="row" spacing={1} flexWrap="wrap">
                 <Typography>
                   <a href={url}>{title}</a>
                 </Typography>
-                <ChipComponent labels={labels} />
+                <Box>
+                  <ChipComponent labels={labels} />
+                </Box>
               </Stack>
-              <Typography>
-                #{number} opened on {calculateCreatedTime(created_at)} by{" "}
-                {login}
-              </Typography>
-            </Grid>
-            {comments > 0 && (
-              <Grid item alignItems="center">
-                <Stack direction="row" spacing={0.5}>
-                  <ChatBubbleOutlineIcon />
-                  <Typography>{comments}</Typography>
-                </Stack>
-              </Grid>
-            )}
-          </Grid>
-        </Box>
+              <Box>
+                <Typography>
+                  #{number} opened on {calculateCreatedTime(created_at)} by{" "}
+                  {login}
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+          {comments > 0 && (
+            <Stack
+              direction="row"
+              spacing={0.5}
+              sx={{ display: { md: "flex", xs: "none" } }}
+            >
+              <ChatBubbleOutlineIcon />
+              <Typography>{comments}</Typography>
+            </Stack>
+          )}
+        </Stack>
       </TableCell>
     </TableRow>
   );

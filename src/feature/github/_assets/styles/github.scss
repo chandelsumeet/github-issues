@@ -1,0 +1,65 @@
+p {
+    font-size: 20px;
+}
+
+.open-action {
+    color: #1a7f37;
+}
+
+a {
+    color: #24292f;
+    text-decoration: none !important;
+    font-weight: bold;
+
+}
+
+.bug {
+    color: #fff !important;
+}
+
+header {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    background: #f6f8fa;
+    width: 100% !important;
+}
+
+.active {
+    border-bottom: 2px solid #fd8c73;
+    
+}
+
+.nav {
+    color: #24292f;
+    &>div
+    {
+        &:hover
+        {
+            cursor: pointer;
+        }
+        padding-bottom: 1rem;
+    }
+}
+
+.header-link {
+    a {
+        color: #58a6ff;
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+
+    .separator {
+        color: #8b949e
+    }
+}
+
+@media only screen and (max-width:1012px) {
+    .display-md {
+        display: none !important;
+    }
+    .context-container
+    {
+        display: flex !important;
+    }
+}

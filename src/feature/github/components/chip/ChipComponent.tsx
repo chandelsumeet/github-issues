@@ -1,15 +1,17 @@
 import { Chip, Stack } from "@mui/material";
-const ChipComponent = ({ labels }: any) => {
-  console.log(labels);
+import { ILabel } from "../../types/Github";
+import { addColorClass } from "../../util/addColor";
+const ChipComponent = ({ labels }: { labels: ILabel[] }) => {
   return (
     <>
       <Stack direction="row" spacing={1}>
         {labels &&
-          labels.map((item: any) => (
+          labels.map((item: ILabel) => (
             <Chip
               size="small"
               key={item.id}
               label={item?.name}
+              className={addColorClass(item?.color)}
               sx={{ background: `#${item?.color}` }}
             />
           ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import GithubIndex from "./feature/github/GithubIndex";
 
 function App() {
